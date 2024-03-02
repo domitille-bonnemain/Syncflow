@@ -1,5 +1,4 @@
 package com;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,30 +10,20 @@ public class Produits {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer idProduits;
 
     private String nomProduit;
-
-    // Supprimez les importations inutilisées des annotations ManyToOne et JoinColumn
-    // Ces annotations sont actuellement commentées et non utilisées, mais vous pouvez également les supprimer si vous ne les utilisez pas.
-    
-    /*
-    @ManyToOne
-    @JoinColumn(name = "id_fournisseur")
-    private Fournisseurs fournisseur; 
-    */
-
-    @Column(name = "quantite_produit")
+    private Integer idFournisseur;
     private Integer quantiteProduit;
 
-    // Getters et Setters
+    // Getters and Setters
 
-    public Integer getId() {
-        return id;
+    public Integer getIdProduits() {
+        return idProduits;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdProduits(Integer idProduits) {
+        this.idProduits = idProduits;
     }
 
     public String getNomProduit() {
@@ -45,15 +34,13 @@ public class Produits {
         this.nomProduit = nomProduit;
     }
 
-    /*
-    public Fournisseurs getFournisseur() {
-        return fournisseur;
+    public Integer getIdFournisseur() {
+        return idFournisseur;
     }
 
-    public void setFournisseur(Fournisseurs fournisseur) {
-        this.fournisseur = fournisseur;
+    public void setIdFournisseur(Integer idFournisseur) {
+        this.idFournisseur = idFournisseur;
     }
-    */
 
     public Integer getQuantiteProduit() {
         return quantiteProduit;

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="title-left">Destination</div>
+           <!-- <div class="title-left">Destination</div>-->
             </div>
             <div class="col-md-3 magasin-container">
                 <div class="magasin-left">Magasin</div>
@@ -16,10 +16,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="adresse-left">Adresse magasin</div>
+               <!-- <div class="adresse-left">Adresse magasin</div>-->
             </div>
             <div class="col-md-3">
-                <div class="adresse-box">{{ selectedMagasinDetails.adresseMagasin2 || '---' }}</div>
+                <div class="adresse-box">{{ selectedMagasinDetails.adresseMagasin2 || '-' }}</div>
             </div>
         </div>
     </div>
@@ -57,9 +57,9 @@ export default {
 <style scoped>
 /* Style du conteneur principal */
 .container {
-    margin: 0 auto; /* Centre le conteneur horizontalement */
+   /* margin: 0 auto;  Centre le conteneur horizontalement */
     max-width: 1200px; /* Définir la largeur maximale du conteneur */
-    padding-left: 20px; /* Marge à gauche (ajustez selon vos besoins) */
+    padding-left:0px; /* Marge à gauche (ajustez selon vos besoins) */
     padding-right: 20px; /* Marge à droite (ajustez selon vos besoins) */
 }
 
@@ -123,8 +123,8 @@ export default {
 /* Ajustement manuel pour réduire l'espace entre "Destination" et "Magasin" */
 .magasin-container {
     display: flex;
-    align-items: center;
-    margin-bottom: 6px;
+    align-items: left;
+    margin-bottom: 0px;
 }
 </style>
 

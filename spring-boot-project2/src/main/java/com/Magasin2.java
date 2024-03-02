@@ -13,7 +13,6 @@ public class Magasin2 {
     private Integer id;
 
     private String nomMagasin2;
-
     private String adresseMagasin2;
 
     public Integer getId() {

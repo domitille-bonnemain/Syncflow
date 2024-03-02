@@ -27,7 +27,7 @@ public class ProduitsController {
         //nouveauProduit.setIdFournisseur(idFournisseur);
         nouveauProduit.setQuantiteProduit(quantiteProduit);
         produitsRepository.save(nouveauProduit);
-        return "Produit ajouté avec succès";
+        return "saved";
     }
 
     @GetMapping(path="/all")

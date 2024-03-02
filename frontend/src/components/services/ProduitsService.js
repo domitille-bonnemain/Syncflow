@@ -1,11 +1,13 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const PRODUITS_API_BASE_URL = 'http://localhost:8080/produits/all';
+const PRODUITS_API_BASE_URL = 'http://localhost:8080/produits/all'
 
-class ProduitsService {
-    getProduits() {
+class ProduitsService{
+    getProduits(){
+
+        
         return axios.get(PRODUITS_API_BASE_URL);
     }
 }
 
-export default new ProduitsService();
+export default new ProduitsService()

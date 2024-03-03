@@ -1,52 +1,61 @@
 package com;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Produits {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idProduits;
+    @Column(name="id_produits")
+    private Integer idP;
 
-    private String nomProduit;
-    private Integer idFournisseur;
-    private Integer quantiteProduit;
+    @Column(name="nom_produits")
+    private String nomProduits;
+
+    private Integer quantiteProduits;
+
+    @ManyToOne
+    @JoinColumn(name = "id_fournisseurs")
+    private Fournisseurs fournisseurs; // Relation avec Fournisseurs
 
     // Getters and Setters
 
-    public Integer getIdProduits() {
-        return idProduits;
+    public Integer getIdP() {
+        return idP;
     }
 
-    public void setIdProduits(Integer idProduits) {
-        this.idProduits = idProduits;
+    public void setIdP(Integer idP) {
+        this.idP = idP;
     }
 
-    public String getNomProduit() {
-        return nomProduit;
+    public String getNomProduits() {
+        return nomProduits;
     }
 
-    public void setNomProduit(String nomProduit) {
-        this.nomProduit = nomProduit;
+    public void setNomProduits(String nomProduits) {
+        this.nomProduits = nomProduits;
     }
 
-    public Integer getIdFournisseur() {
-        return idFournisseur;
+    public Integer getQuantiteProduits() {
+        return quantiteProduits;
     }
 
-    public void setIdFournisseur(Integer idFournisseur) {
-        this.idFournisseur = idFournisseur;
+    public void setQuantiteProduits(Integer quantiteProduits) {
+        this.quantiteProduits = quantiteProduits;
     }
 
-    public Integer getQuantiteProduit() {
-        return quantiteProduit;
+    public Fournisseurs getFournisseurs() {
+        return fournisseurs;
     }
 
-    public void setQuantiteProduit(Integer quantiteProduit) {
-        this.quantiteProduit = quantiteProduit;
+    public void setFournisseurs(Fournisseurs fournisseurs) {
+        this.fournisseurs = fournisseurs;
     }
 }

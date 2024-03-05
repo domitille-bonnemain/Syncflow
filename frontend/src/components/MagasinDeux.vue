@@ -33,7 +33,7 @@
                     <select v-model="selectedProduit" @change="selectProduit" class="form-control">
                         <option value="" disabled>Sélectionner un produit<span class="dropdown-arrow" :class="{ 'up': selectedProduit, 'down': !selectedProduit }" @click="toggleDropdown">&#9660;</span></option>
                         <option v-for="produit in produits" :key="produit.id" :value="produit.id">
-                            {{ produit.nomProduit }}
+                            {{ produit.nomProduits }}
                         </option>
                     </select>
                 </div>

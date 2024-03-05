@@ -261,3 +261,5 @@ Caused by: java.sql.SQLException: Referencing column 'id_fournisseurs' and refer
 2024-03-05T09:50:04.544+01:00  INFO 19668 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-03-05T09:50:04.546+01:00  INFO 19668 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2024-03-05T10:33:22.495+01:00  WARN 19668 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m5s830ms922µs100ns).
+2024-03-05T11:47:03.341+01:00  WARN 19668 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m9s892ms937µs500ns).
+2024-03-05T12:26:21.012+01:00  WARN 19668 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m47s327ms392µs900ns).

@@ -27,11 +27,11 @@ public class Produits {
 
     // Getters and Setters
 
-    public Integer getIdP() {
+    public Integer getIdProduits() {
         return idP;
     }
 
-    public void setIdP(Integer idP) {
+    public void setIdProduits(Integer idP) {
         this.idP = idP;
     }
 

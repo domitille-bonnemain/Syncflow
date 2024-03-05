@@ -1,25 +1,45 @@
 <template>
     <div class="container">
+        <!-- Section pour les magasins -->
         <div class="row">
-            <div class="col-md-3">
-           <!-- <div class="title-left">Destination</div>-->
-            </div>
             <div class="col-md-3 magasin-container">
                 <div class="magasin-left">Magasin</div>
-                <div class="dropdown-content">
+            </div>
+            <div class="col-md-3 dropdown-container">
+                <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
                     <select v-model="selectedMagasin" @change="selectMagasin" class="form-control">
-                        <option value="" disabled>Sélectionner un magasin<span class="dropdown-arrow">&#9660;</span></option>
+                        <option value="" disabled>Sélectionner un magasin<span class="dropdown-arrow" :class="{ 'up': selectedMagasin, 'down': !selectedMagasin }" @click="toggleDropdown">&#9660;</span></option>
                         <option v-for="magasin in magasin2" :key="magasin.id" :value="magasin.id">
                             {{ magasin.nomMagasin2 }}
                         </option>
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
-               <!-- <div class="adresse-left">Adresse magasin</div>-->
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 adresse-container">
                 <div class="adresse-box">{{ selectedMagasinDetails.adresseMagasin2 || '-' }}</div>
+            </div>
+        </div>
+
+        <!-- Espace entre les sections -->
+        <div style="height: 20px;"></div>
+
+        <!-- Section pour les produits -->
+        <div class="row">
+            <div class="col-md-3 produit-container">
+                <div class="produit-left">Produit</div>
+            </div>
+            <div class="col-md-3 dropdown-container">
+                <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
+                    <select v-model="selectedProduit" @change="selectProduit" class="form-control">
+                        <option value="" disabled>Sélectionner un produit<span class="dropdown-arrow" :class="{ 'up': selectedProduit, 'down': !selectedProduit }" @click="toggleDropdown">&#9660;</span></option>
+                        <option v-for="produit in produits" :key="produit.id" :value="produit.id">
+                            {{ produit.nomProduit }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 produit-container">
+                <div class="adresse-box">{{ selectedProduitDetails.quantiteProduits || '-' }}</div>
             </div>
         </div>
     </div>
@@ -27,6 +47,7 @@
 
 <script>
 import MagasinDeuxService from './services/MagasinDeuxService';
+import ProduitsService from './services/ProduitsService';
 
 export default {
     name: 'MagasinDeux',
@@ -35,6 +56,12 @@ export default {
             magasin2: [],
             selectedMagasin: '', // Variable pour stocker le magasin sélectionné dans le menu déroulant
             selectedMagasinDetails: {}, // Détails du magasin sélectionné
+            isDropdownOpen: false, // Variable pour suivre l'état du dropdown
+            produits: [],
+            selectedProduit: '', // Variable pour stocker le produit sélectionné dans le menu déroulant
+            selectedProduitDetails: {}, // Détails du produit sélectionné
+            isProduitDropdownOpen: false, // Variable pour suivre l'état du dropdown des produits
+            quantiteProduitSelected: 0 // Ajout de la propriété pour la quantité de produit sélectionné
         };
     },
     methods: {
@@ -46,10 +73,32 @@ export default {
         selectMagasin() {
             // Trouver les détails du magasin sélectionné
             this.selectedMagasinDetails = this.magasin2.find(magasin => magasin.id === this.selectedMagasin) || {};
+            this.isDropdownOpen = false; // Fermer le dropdown après la sélection
         },
+        toggleDropdown() {
+            this.isDropdownOpen = !this.isDropdownOpen;
+        },
+        getProduits() {
+            ProduitsService.getProduits().then(response => {
+                this.produits = response.data;
+                console.log(this.produits); // Ajoutez ceci pour vérifier les produits récupérés
+    }).catch(error => {
+        console.error('Error fetching products:', error);
+    });
+        
+        },
+        selectProduit() {
+            // Trouver les détails du produit sélectionné
+            this.selectedProduitDetails = this.produits.find(produit => produit.id === this.selectedProduit) || {};
+            this.isProduitDropdownOpen = false; // Fermer le dropdown après la sélection
+        },
+        toggleProduitDropdown() {
+            this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
+        }
     },
     created() {
         this.getMagasin2();
+        this.getProduits(); // Appeler la fonction pour obtenir les produits
     },
 };
 </script>
@@ -57,60 +106,64 @@ export default {
 <style scoped>
 /* Style du conteneur principal */
 .container {
-   /* margin: 0 auto;  Centre le conteneur horizontalement */
-    max-width: 1200px; /* Définir la largeur maximale du conteneur */
-    padding-left:0px; /* Marge à gauche (ajustez selon vos besoins) */
-    padding-right: 20px; /* Marge à droite (ajustez selon vos besoins) */
-}
-
-/* Style pour les titres */
-.title-left, .magasin-left, .adresse-left {
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-/* Style pour les conteneurs flexibles */
-.dropdown-content, .magasin-container, .adresse-container {
-    display: flex; /* Utilisation de flexbox */
-    align-items: center; /* Centrage vertical des éléments */
-    margin-bottom: 6px; /* Marge en bas de chaque conteneur */
+    max-width: 1200px;
+    padding-left: 0;
+    padding-right: 20px;
 }
 
 /* Style pour le mot "Magasin" à gauche du dropdown */
-.magasin-left {
-    margin-right: 10px; /* Ajuste la marge entre le mot "Magasin" et le dropdown */
+.magasin-left, .produit-left {
+    font-weight: bold;
 }
 
 /* Style pour le dropdown */
+.dropdown-content {
+    position: relative;
+}
+
+/* Style pour le select */
 .dropdown-content select {
-    width: 100%; /* Largeur du select à 100% */
+    width: calc(100% - 20px); /* Réduire la largeur pour laisser de la place à la flèche */
     padding: 3px;
-    border: 1px solid #ccc;
+    border: 1px solid #040404;
     border-radius: 3px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
+    appearance: none; /* Supprimer les styles natifs du select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 /* Style pour la flèche du dropdown */
 .dropdown-arrow {
     position: absolute;
     top: 50%;
-    right: 3px;
+    right: 5px; /* Ajuster la distance du bord droit */
     transform: translateY(-50%);
     cursor: pointer;
+    border: solid rgb(1, 1, 1);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.3s ease; /* Animation de transition pour l'effet visuel */
 }
 
-/* Style pour le mot "Adresse magasin" */
-.adresse-left {
-    margin-right: -140px; /* Ajuste la marge entre "Adresse magasin" et le champ affichant l'adresse */
+/* Style pour la flèche vers le bas par défaut */
+.dropdown-arrow.down {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Style pour la flèche vers le haut lorsqu'un magasin est sélectionné */
+.dropdown-arrow.up {
+    transform: translateY(-50%) rotate(-135deg);
 }
 
 /* Style pour le champ d'affichage de l'adresse */
 .adresse-box {
+    width: 100%;
     padding: 3px;
-    border: 1px solid #ccc;
+    border: 1px solid #060606;
     border-radius: 3px;
-    background-color: #f2f2f2;
-    margin-bottom: 6px;
+    background-color: #f0f0f0;
 }
 
 /* Style pour les colonnes */
@@ -120,11 +173,8 @@ export default {
     margin-bottom: 3px;
 }
 
-/* Ajustement manuel pour réduire l'espace entre "Destination" et "Magasin" */
-.magasin-container {
-    display: flex;
-    align-items: left;
-    margin-bottom: 0px;
+/* Ajustement des marges entre les colonnes */
+.magasin-container, .dropdown-container, .adresse-container, .produit-container, .details-produit-container {
+    margin-right: 5px; /* Ajustez selon vos besoins */
 }
 </style>
-

@@ -23,12 +23,12 @@ public class ProduitsController {
     @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody String addNewProduits (@RequestParam String nomProduits
           ,//@RequestParam Integer idFournisseurs,
-             @RequestParam Integer quantiteProduits) {
-        Produits nouveauProduits = new Produits();
-        nouveauProduits.setNomProduits(nomProduits);
+             @RequestParam Integer quantiteStock) {
+        Produits nouveauStock = new Produits();
+        nouveauStock.setNomProduits(nomProduits);
         //nouveauProduit.setIdFournisseur(idFournisseur);
-        nouveauProduits.setQuantiteProduits(quantiteProduits);
-        ProduitsRepository.save(nouveauProduits);
+        nouveauStock.setQuantiteStock(quantiteStock);
+        ProduitsRepository.save(nouveauStock);
         return "saved";
     }
 

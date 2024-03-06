@@ -19,7 +19,7 @@ public class Produits {
     @Column(name="nom_produits")
     private String nomProduits;
 
-    private Integer quantiteProduits;
+    private Integer quantiteStock;
 
     @ManyToOne
     @JoinColumn(name = "id_fournisseurs")
@@ -43,12 +43,12 @@ public class Produits {
         this.nomProduits = nomProduits;
     }
 
-    public Integer getQuantiteProduits() {
-        return quantiteProduits;
+    public Integer getQuantiteStock() {
+        return quantiteStock;
     }
 
-    public void setQuantiteProduits(Integer quantiteProduits) {
-        this.quantiteProduits = quantiteProduits;
+    public void setQuantiteStock(Integer quantiteStock) {
+        this.quantiteStock = quantiteStock;
     }
 
     public Fournisseurs getFournisseurs() {

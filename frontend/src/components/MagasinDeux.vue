@@ -3,7 +3,8 @@
         <!-- Section pour les magasins -->
         <div class="row">
             <div class="col-md-3 magasin-container">
-                <div class="magasin-left">Magasin</div>
+                
+                <div class="magasin-left"><label for = "Magasin">Magasin</label></div>
             </div>
             <div class="col-md-3 dropdown-container">
                 <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
@@ -21,25 +22,25 @@
         </div>
 
         <!-- Espace entre les sections -->
-        <div style="height: 20px;"></div>
+        <div style="height: 10px;"></div>
 
         <!-- Section pour les produits -->
         <div class="row">
             <div class="col-md-3 produit-container">
-                <div class="produit-left">Produit</div>
+                <div class="produit-left"><label for = "Produit"> Produit</label></div>
             </div>
             <div class="col-md-3 dropdown-container">
-                <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
+                <div class="dropdown-content" :class="{ 'open': isProduitDropdownOpen }">
                     <select v-model="selectedProduit" @change="selectProduit" class="form-control">
-                        <option value="" disabled>Sélectionner un produit<span class="dropdown-arrow" :class="{ 'up': selectedProduit, 'down': !selectedProduit }" @click="toggleDropdown">&#9660;</span></option>
+                        <option value="" disabled>Sélectionner un produit<span class="dropdown-arrow" :class="{ 'up': selectedProduit, 'down': !selectedProduit }" @click="toggleProduitDropdown">&#9660;</span></option>
                         <option v-for="produit in produits" :key="produit.id" :value="produit.id">
                             {{ produit.nomProduits }}
                         </option>
                     </select>
                 </div>
             </div>
-            <div class="col-md-3 produit-container">
-                <div class="adresse-box">{{ selectedProduitDetails.quantiteProduits || '-' }}</div>
+            <div class="col-md-3 quantiteSelected-container">
+                <input type="text" v-model="quantiteProduitSelected" class="form-control">
             </div>
         </div>
     </div>
@@ -81,11 +82,9 @@ export default {
         getProduits() {
             ProduitsService.getProduits().then(response => {
                 this.produits = response.data;
-                console.log(this.produits); // Ajoutez ceci pour vérifier les produits récupérés
-    }).catch(error => {
-        console.error('Error fetching products:', error);
-    });
-        
+            }).catch(error => {
+                console.error('Error fetching products:', error);
+            });
         },
         selectProduit() {
             // Trouver les détails du produit sélectionné
@@ -107,60 +106,54 @@ export default {
 /* Style du conteneur principal */
 .container {
     max-width: 1200px;
-    padding-left: 0;
-    padding-right: 20px;
+   /* background-color: brown; */
 }
 
-/* Style pour le mot "Magasin" à gauche du dropdown */
-.magasin-left, .produit-left {
+/* Style pour les labels "Magasin et Produit" à gauche du dropdown */
+label {
     font-weight: bold;
+ 
+}
+
+
+.magasin-container{
+    width: 6%;
+ 
+}
+
+.produit-container{
+    width: 6%;
+ 
 }
 
 /* Style pour le dropdown */
 .dropdown-content {
-    position: relative;
+   /* position: relative;*/
 }
 
 /* Style pour le select */
 .dropdown-content select {
-    width: calc(100% - 20px); /* Réduire la largeur pour laisser de la place à la flèche */
-    padding: 3px;
-    border: 1px solid #040404;
+    /*width: calc(100% - 20px); Réduit la largur du champ dropdown*/
+    padding: 3px 3px 3px 3px;
+    border: 1px solid #060606;
     border-radius: 3px;
-    background-color: #ffffff;
-    appearance: none; /* Supprimer les styles natifs du select */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-/* Style pour la flèche du dropdown */
-.dropdown-arrow {
-    position: absolute;
-    top: 50%;
-    right: 5px; /* Ajuster la distance du bord droit */
-    transform: translateY(-50%);
-    cursor: pointer;
-    border: solid rgb(1, 1, 1);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: transform 0.3s ease; /* Animation de transition pour l'effet visuel */
-}
-
-/* Style pour la flèche vers le bas par défaut */
-.dropdown-arrow.down {
-    transform: translateY(-50%) rotate(45deg);
-}
-
-/* Style pour la flèche vers le haut lorsqu'un magasin est sélectionné */
-.dropdown-arrow.up {
-    transform: translateY(-50%) rotate(-135deg);
+    background-color: #f0f0f0;
+ 
 }
 
 /* Style pour le champ d'affichage de l'adresse */
 .adresse-box {
     width: 100%;
-    padding: 3px;
+    padding: 3px 3px 3px 3px;
+    border: 1px solid #060606;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+}
+
+/* Style pour le champ texte utilisé pour la quantité*/
+input{
+    width: 100%;
+    padding: 3px 3px 3px 3px;
     border: 1px solid #060606;
     border-radius: 3px;
     background-color: #f0f0f0;
@@ -176,5 +169,6 @@ export default {
 /* Ajustement des marges entre les colonnes */
 .magasin-container, .dropdown-container, .adresse-container, .produit-container, .details-produit-container {
     margin-right: 5px; /* Ajustez selon vos besoins */
+    text-align:left ;
 }
 </style>

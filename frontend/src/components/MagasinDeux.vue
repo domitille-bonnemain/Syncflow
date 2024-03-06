@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="col-md-3 quantiteSelected-container">
-                <input type="text" v-model="quantiteProduitSelected" class="form-control">
+                <input type="text" v-model="quantiteProduitSelected" @keyup.enter="enregistreQuantite" class="form-control">
             </div>
         </div>
     </div>

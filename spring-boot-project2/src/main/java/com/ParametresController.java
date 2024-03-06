@@ -18,18 +18,20 @@ public class ParametresController {
     private ParametresRepository parametresRepository;
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewParametres (
-          @RequestParam Integer dateSouhaitee,
-          @RequestParam Integer dateButoir,
-          @RequestParam Integer quantiteCommande,
-          @RequestParam Integer magasinId) { // Assurez-vous que c'est bien l'identifiant du magasin
-        Parametres nouveauParametres = new Parametres();
-        nouveauParametres.setDateSouhaitee(dateSouhaitee);
-        nouveauParametres.setDateButoir(dateButoir);
-        nouveauParametres.setQuantiteCommande(quantiteCommande);
-        parametresRepository.save(nouveauParametres);
-        return "saved";
-    }
+public @ResponseBody String addNewParametres (
+      @RequestParam Integer dateSouhaitee,
+      @RequestParam Integer dateButoir,
+      @RequestParam Integer quantiteCommande,
+      @RequestParam Integer magasinId,
+      @RequestParam Integer quantiteProduit) { // Ajout du paramètre pour la quantité de produit
+    Parametres nouveauParametres = new Parametres();
+    nouveauParametres.setDateSouhaitee(dateSouhaitee);
+    nouveauParametres.setDateButoir(dateButoir);
+    nouveauParametres.setQuantiteCommande(quantiteCommande);
+    parametresRepository.save(nouveauParametres);
+    return "saved";
+}
+
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Parametres> getAllParametres() {

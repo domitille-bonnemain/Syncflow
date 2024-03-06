@@ -390,3 +390,7 @@ Caused by: java.sql.SQLException: Referencing column 'id_fournisseurs' and refer
 2024-03-06T15:24:07.489+01:00  INFO 7408 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-03-06T15:24:07.489+01:00  INFO 7408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-03-06T15:24:07.489+01:00  INFO 7408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-06T16:41:20.893+01:00  WARN 7408 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m22s985ms54µs300ns).
+2024-03-06T16:50:22.040+01:00  INFO 7408 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-06T16:50:22.048+01:00  INFO 7408 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-06T16:50:22.058+01:00  INFO 7408 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -40,15 +40,18 @@
                 </div>
             </div>
             <div class="col-md-3 quantiteSelected-container">
-                <input type="text" v-model="quantiteProduitSelected" @keyup.enter="enregistreQuantite" class="form-control">
+                <input type="text" v-model="quantiteProduitSelected" @keyup.enter="saveQuantiteCommande" class="form-control">
+
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 import MagasinDeuxService from './services/MagasinDeuxService';
 import ProduitsService from './services/ProduitsService';
+import ParametresService from './services/ParametresService';
 
 export default {
     name: 'MagasinDeux',
@@ -62,7 +65,8 @@ export default {
             selectedProduit: '', // Variable pour stocker le produit sélectionné dans le menu déroulant
             selectedProduitDetails: {}, // Détails du produit sélectionné
             isProduitDropdownOpen: false, // Variable pour suivre l'état du dropdown des produits
-            quantiteProduitSelected: 0 // Ajout de la propriété pour la quantité de produit sélectionné
+            quantiteProduitSelected: 0, // Ajout de la propriété pour la quantité de produit sélectionné
+            quantiteCommande: '' // Ajout de la propriété pour la quantité de commande
         };
     },
     methods: {
@@ -93,6 +97,29 @@ export default {
         },
         toggleProduitDropdown() {
             this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
+        },
+        saveQuantiteCommande() {
+            // Récupérer la quantité de commande depuis votre vue
+            const quantiteCommande = this.quantiteProduitSelected;
+
+            // Envoyer la quantité de commande au backend
+            axios.post('http://localhost:8080/parametres/add', {
+                quantiteCommande: quantiteCommande
+            })
+            .then(response => {
+                console.log(response.data);
+                // Réinitialiser le champ de texte ou effectuer d'autres actions si nécessaire
+                // Enregistrer la quantite dans ParametresService
+                ParametresService.saveQuantite(quantiteCommande).then(response => {
+                    console.log(response.data);
+                }).catch(error => {
+                    console.error('Error saving quantity:', error);
+                });
+                // Au dessus ce qui doit enregistrer dans ParametresService
+            })
+            .catch(error => {
+                console.error(error);
+            });
         }
     },
     created() {
@@ -100,6 +127,8 @@ export default {
         this.getProduits(); // Appeler la fonction pour obtenir les produits
     },
 };
+
+
 </script>
 
 <style scoped>

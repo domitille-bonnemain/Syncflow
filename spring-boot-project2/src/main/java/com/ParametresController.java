@@ -22,7 +22,7 @@ public @ResponseBody String addNewParametres (
       @RequestParam Integer dateSouhaitee,
       @RequestParam Integer dateButoir,
       @RequestParam Integer quantiteCommande,
-      @RequestParam Integer magasinId,
+      @RequestParam Integer Id,
       @RequestParam Integer quantiteProduit) { // Ajout du paramètre pour la quantité de produit
     Parametres nouveauParametres = new Parametres();
     nouveauParametres.setDateSouhaitee(dateSouhaitee);

@@ -10,28 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path="/parametres") // Chemin pour correspondre aux parametres
+@RequestMapping(path="/parametres")
 @CrossOrigin("http://localhost:8081")
 public class ParametresController {
 
     @Autowired
     private ParametresRepository parametresRepository;
 
-    @PostMapping(path="/add") // Map ONLY POST Requests
-public @ResponseBody String addNewParametres (
-      @RequestParam Integer dateSouhaitee,
-      @RequestParam Integer dateButoir,
-      @RequestParam Integer quantiteCommande,
-      @RequestParam Integer Id,
-      @RequestParam Integer quantiteProduit) { // Ajout du paramètre pour la quantité de produit
-    Parametres nouveauParametres = new Parametres();
-    nouveauParametres.setDateSouhaitee(dateSouhaitee);
-    nouveauParametres.setDateButoir(dateButoir);
-    nouveauParametres.setQuantiteCommande(quantiteCommande);
-    parametresRepository.save(nouveauParametres);
-    return "saved";
-}
-
+    @PostMapping(path="/add")
+    public @ResponseBody String addNewParametres (
+        @RequestParam Integer quantiteCommande
+    ) {
+        Parametres nouveauParametres = new Parametres();
+        nouveauParametres.setQuantiteCommande(quantiteCommande);
+        parametresRepository.save(nouveauParametres);
+        return "saved";
+    }
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Parametres> getAllParametres() {

@@ -4,7 +4,8 @@
         <div class="row">
             <div class="col-md-3 magasin-container">
                 
-                <div class="magasin-left"><label for = "Magasin">Magasin</label></div>
+                <div class="magasin-left"><label for="Magasin">Magasin</label></div>
+
             </div>
             <div class="col-md-3 dropdown-container">
                 <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
@@ -27,7 +28,8 @@
         <!-- Section pour les produits -->
         <div class="row">
             <div class="col-md-3 produit-container">
-                <div class="produit-left"><label for = "Produit"> Produit</label></div>
+                <div class="produit-left"><label for="Produit">Produit</label></div>
+
             </div>
             <div class="col-md-3 dropdown-container">
                 <div class="dropdown-content" :class="{ 'open': isProduitDropdownOpen }">

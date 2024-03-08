@@ -1,11 +1,35 @@
 <template>
     <div class="container">
+        <!-- Section pour les dates souhaitées -->
+        <div class="row">
+            <div class="col-md-3">
+                <label for="DateSouhaitee">Date souhaitée</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" v-model="dateSouhaitee" class="form-control">
+            </div>
+        </div>
+
+        <!-- Espace entre les sections -->
+        <div style="height: 10px;"></div>
+
+        <!-- Section pour les dates butoir -->
+        <div class="row">
+            <div class="col-md-3">
+                <label for="DateButoir">Date butoir</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" v-model="dateButoir" class="form-control">
+            </div>
+        </div>
+
+        <!-- Espace entre les sections -->
+        <div style="height: 10px;"></div>
+
         <!-- Section pour les magasins -->
         <div class="row">
-            <div class="col-md-3 magasin-container">
-                
-                <div class="magasin-left"><label for="Magasin">Magasin</label></div>
-
+            <div class="col-md-3">
+                <label for="Magasin">Magasin</label>
             </div>
             <div class="col-md-3 dropdown-container">
                 <div class="dropdown-content" :class="{ 'open': isDropdownOpen }">
@@ -27,9 +51,8 @@
 
         <!-- Section pour les produits -->
         <div class="row">
-            <div class="col-md-3 produit-container">
-                <div class="produit-left"><label for="Produit">Produit</label></div>
-
+            <div class="col-md-3">
+                <label for="Produit">Produit</label>
             </div>
             <div class="col-md-3 dropdown-container">
                 <div class="dropdown-content" :class="{ 'open': isProduitDropdownOpen }">
@@ -42,12 +65,13 @@
                 </div>
             </div>
             <div class="col-md-3 quantiteSelected-container">
-                <input type="text" v-model="quantiteProduitSelected" @keyup.enter="saveQuantiteCommande" class="form-control">
-
+                <input type="text" v-model="quantiteCommandeSelected" @keyup.enter="saveQuantiteCommande" class="form-control">
             </div>
         </div>
     </div>
 </template>
+
+
 
 <script>
 import axios from 'axios';
@@ -67,7 +91,7 @@ export default {
             selectedProduit: '', // Variable pour stocker le produit sélectionné dans le menu déroulant
             selectedProduitDetails: {}, // Détails du produit sélectionné
             isProduitDropdownOpen: false, // Variable pour suivre l'état du dropdown des produits
-            quantiteProduitSelected: 0, // Ajout de la propriété pour la quantité de produit sélectionné
+            quantiteCommandeSelected: 0, // Ajout de la propriété pour la quantité de produit sélectionné
             quantiteCommande: '' // Ajout de la propriété pour la quantité de commande
         };
     },
@@ -102,11 +126,11 @@ export default {
         },
         saveQuantiteCommande() {
             // Récupérer la quantité de commande depuis votre vue
-            const quantiteCommande = this.quantiteProduitSelected;
+            const quantiteCommande = this.quantiteCommandeSelected;
 
             // Envoyer la quantité de commande au backend
             axios.post('http://localhost:8080/parametres/add', {
-                quantiteCommande: quantiteCommande
+                quantiteCommande: quantiteCommande,
             })
             .then(response => {
                 console.log(response.data);
@@ -134,6 +158,13 @@ export default {
 </script>
 
 <style scoped>
+/* Ajustement des marges entre les colonnes */
+.date-container {
+    margin-right: 5px;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
 /* Style du conteneur principal */
 .container {
     max-width: 1200px;
@@ -198,8 +229,8 @@ input{
 }
 
 /* Ajustement des marges entre les colonnes */
-.magasin-container, .dropdown-container, .adresse-container, .produit-container, .details-produit-container {
-    margin-right: 5px; /* Ajustez selon vos besoins */
+.magasin-container, .dropdown-container, .adresse-container, .produit-container, .details-produit-container, .date-container {
+    margin-right: 5px 5px 5px 5px; /* Ajustez selon vos besoins */
     text-align:left ;
 }
 </style>

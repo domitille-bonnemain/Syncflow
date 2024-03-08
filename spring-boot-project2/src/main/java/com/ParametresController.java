@@ -19,9 +19,13 @@ public class ParametresController {
 
     @PostMapping(path="/add")
     public @ResponseBody String addNewParametres (
+        @RequestParam Integer dateSouhaitee,
+        @RequestParam Integer dateButoir,
         @RequestParam Integer quantiteCommande
     ) {
         Parametres nouveauParametres = new Parametres();
+        nouveauParametres.setDateSouhaitee(dateSouhaitee);
+        nouveauParametres.setDateButoir(dateButoir);
         nouveauParametres.setQuantiteCommande(quantiteCommande);
         parametresRepository.save(nouveauParametres);
         return "saved";
@@ -32,3 +36,4 @@ public class ParametresController {
         return parametresRepository.findAll();
     }
 }
+

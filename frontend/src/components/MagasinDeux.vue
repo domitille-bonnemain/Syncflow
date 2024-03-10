@@ -92,8 +92,7 @@ export default {
             selectedProduitDetails: {},
             isProduitDropdownOpen: false,
             quantiteCommandeSelected: 0,
-            quantiteCommande: '',
-           
+            quantiteCommande: '',      
         };
     },
     methods: {
@@ -125,70 +124,58 @@ export default {
         },
         saveQuantiteCommande() {
             const quantiteCommande = this.quantiteCommandeSelected;
-            const dateSouhaitee = this.dateSouhaitee; 
+            const dateSouhaitee = this.dateSouhaitee;
             const dateButoir = this.dateButoir;
 
-    axios({
-        url: 'http://localhost:8080/parametres/add',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
+            const data = {
+                dateSouhaitee: dateSouhaitee,
+                dateButoir: dateButoir,
+                quantiteCommande: quantiteCommande
+            };
+
+            axios.post('http://localhost:8080/parametres/add', data)
+                .then(response => {
+                    console.log(response.data);
+                    // Appel du service pour sauvegarder la quantité
+                    ParametresService.saveQuantite(quantiteCommande)
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.error('Erreur lors de la sauvegarde de la quantité :', error);
+                        });
+                })
+                .catch(error => {
+                    console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);
+                });
         },
-        data: {
-            dateSouhaitee: dateSouhaitee,
-            dateButoir: dateButoir,
-            quantiteCommande: quantiteCommande
+
+        saveDates() {
+            const dateSouhaitee = new Date(this.dateSouhaitee);
+            const dateButoir = new Date(this.dateButoir);
+            const quantiteCommande = this.quantiteCommande;
+
+            const data = {
+                dateSouhaitee: dateSouhaitee,
+                dateButoir: dateButoir,
+                quantiteCommande: quantiteCommande
+            };
+
+            axios.post('http://localhost:8080/parametres/add', data)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error('Erreur lors de l\'appel Axios pour sauvegarder les dates :', error);
+                });
         }
-    })
-    .then(response => {
-        console.log(response.data);
-        // Appel du service pour sauvegarder la quantité
-        ParametresService.saveQuantite(quantiteCommande)
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error('Erreur lors de la sauvegarde de la quantité :', error);
-            });
-    })
-    .catch(error => {
-        console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);
-    });
-},
-
-saveDates() {
-    const dateSouhaitee = this.dateSouhaitee;
-    const dateButoir = this.dateButoir;
-
-    axios({
-        url: 'http://localhost:8080/parametres/add',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        data: {
-            dateSouhaitee: dateSouhaitee,
-            dateButoir: dateButoir,
-            quantiteCommande: this.quantiteCommande
-        }
-    })
-    .then(response => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.error('Erreur lors de l\'appel Axios pour sauvegarder les dates :', error);
-    });
-}
-
-
-
     },
     created() {
         this.getMagasin2();
         this.getProduits();
-
     },
 };
+
 </script>
 
 

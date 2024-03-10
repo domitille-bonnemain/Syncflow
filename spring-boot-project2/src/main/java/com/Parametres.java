@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import java.util.Date;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Parametres {
@@ -16,12 +19,13 @@ public class Parametres {
     @Column(name="id_parametres")
     private Integer id;
 
+    @Temporal(TemporalType.DATE)
     @Column(name="date_souhaitee")
-    private Integer dateSouhaitee;
+    private Date dateSouhaitee;
 
-    
+    @Temporal(TemporalType.DATE)
     @Column(name="date_butoir")
-    private Integer dateButoir;
+    private Date dateButoir;
 
     @Column(name="quantite_commande")
     private Integer quantiteCommande;
@@ -42,19 +46,19 @@ public class Parametres {
         this.id = id;
     }
 
-    public Integer getDateSouhaitee() {
+    public Date getDateSouhaitee() {
         return dateSouhaitee;
     }
 
-    public void setDateSouhaitee(Integer dateSouhaitee) {
+    public void setDateSouhaitee(Date dateSouhaitee) {
         this.dateSouhaitee = dateSouhaitee;
     }
 
-    public Integer getDateButoir() {
+    public Date getDateButoir() {
         return dateButoir;
     }
 
-    public void setDateButoir(Integer dateButoir) {
+    public void setDateButoir(Date dateButoir) {
         this.dateButoir = dateButoir;
     }
 

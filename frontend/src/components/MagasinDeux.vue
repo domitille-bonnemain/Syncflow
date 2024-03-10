@@ -6,7 +6,7 @@
                 <label for="DateSouhaitee">Date souhaitée</label>
             </div>
             <div class="col-md-3">
-                <input type="date" v-model="dateSouhaitee" class="form-control">
+                <input type="date" v-model="dateSouhaitee" @keyup.enter="saveDates" class="form-control">
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                 <label for="DateButoir">Date butoir</label>
             </div>
             <div class="col-md-3">
-                <input type="date" v-model="dateButoir" class="form-control">
+                <input type="date" v-model="dateButoir" @keyup.enter="saveDates" class="form-control">
             </div>
         </div>
 
@@ -71,8 +71,6 @@
     </div>
 </template>
 
-
-
 <script>
 import axios from 'axios';
 import MagasinDeuxService from './services/MagasinDeuxService';
@@ -83,16 +81,19 @@ export default {
     name: 'MagasinDeux',
     data() {
         return {
+            dateSouhaitee: '',
+            dateButoir: '',
             magasin2: [],
-            selectedMagasin: '', // Variable pour stocker le magasin sélectionné dans le menu déroulant
-            selectedMagasinDetails: {}, // Détails du magasin sélectionné
-            isDropdownOpen: false, // Variable pour suivre l'état du dropdown
+            selectedMagasin: '',
+            selectedMagasinDetails: {},
+            isDropdownOpen: false,
             produits: [],
-            selectedProduit: '', // Variable pour stocker le produit sélectionné dans le menu déroulant
-            selectedProduitDetails: {}, // Détails du produit sélectionné
-            isProduitDropdownOpen: false, // Variable pour suivre l'état du dropdown des produits
-            quantiteCommandeSelected: 0, // Ajout de la propriété pour la quantité de produit sélectionné
-            quantiteCommande: '' // Ajout de la propriété pour la quantité de commande
+            selectedProduit: '',
+            selectedProduitDetails: {},
+            isProduitDropdownOpen: false,
+            quantiteCommandeSelected: 0,
+            quantiteCommande: '',
+           
         };
     },
     methods: {
@@ -102,9 +103,8 @@ export default {
             });
         },
         selectMagasin() {
-            // Trouver les détails du magasin sélectionné
             this.selectedMagasinDetails = this.magasin2.find(magasin => magasin.id === this.selectedMagasin) || {};
-            this.isDropdownOpen = false; // Fermer le dropdown après la sélection
+            this.isDropdownOpen = false;
         },
         toggleDropdown() {
             this.isDropdownOpen = !this.isDropdownOpen;
@@ -117,120 +117,128 @@ export default {
             });
         },
         selectProduit() {
-            // Trouver les détails du produit sélectionné
             this.selectedProduitDetails = this.produits.find(produit => produit.id === this.selectedProduit) || {};
-            this.isProduitDropdownOpen = false; // Fermer le dropdown après la sélection
+            this.isProduitDropdownOpen = false;
         },
         toggleProduitDropdown() {
             this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
         },
         saveQuantiteCommande() {
-            // Récupérer la quantité de commande depuis votre vue
             const quantiteCommande = this.quantiteCommandeSelected;
+            const dateSouhaitee = this.dateSouhaitee; 
+            const dateButoir = this.dateButoir;
 
-            // Envoyer la quantité de commande au backend
-            axios.post('http://localhost:8080/parametres/add', {
-                quantiteCommande: quantiteCommande,
-            })
+    axios({
+        url: 'http://localhost:8080/parametres/add',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: {
+            dateSouhaitee: dateSouhaitee,
+            dateButoir: dateButoir,
+            quantiteCommande: quantiteCommande
+        }
+    })
+    .then(response => {
+        console.log(response.data);
+        // Appel du service pour sauvegarder la quantité
+        ParametresService.saveQuantite(quantiteCommande)
             .then(response => {
                 console.log(response.data);
-                // Réinitialiser le champ de texte ou effectuer d'autres actions si nécessaire
-                // Enregistrer la quantite dans ParametresService
-                ParametresService.saveQuantite(quantiteCommande).then(response => {
-                    console.log(response.data);
-                }).catch(error => {
-                    console.error('Error saving quantity:', error);
-                });
-                // Au dessus ce qui doit enregistrer dans ParametresService
             })
             .catch(error => {
-                console.error(error);
+                console.error('Erreur lors de la sauvegarde de la quantité :', error);
             });
+    })
+    .catch(error => {
+        console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);
+    });
+},
+
+saveDates() {
+    const dateSouhaitee = this.dateSouhaitee;
+    const dateButoir = this.dateButoir;
+
+    axios({
+        url: 'http://localhost:8080/parametres/add',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: {
+            dateSouhaitee: dateSouhaitee,
+            dateButoir: dateButoir,
+            quantiteCommande: this.quantiteCommande
         }
+    })
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error('Erreur lors de l\'appel Axios pour sauvegarder les dates :', error);
+    });
+}
+
+
+
     },
     created() {
         this.getMagasin2();
-        this.getProduits(); // Appeler la fonction pour obtenir les produits
+        this.getProduits();
+
     },
 };
-
-
 </script>
 
+
 <style scoped>
-/* Ajustement des marges entre les colonnes */
 .date-container {
     margin-right: 5px;
+    margin-left: 5px;
     margin-bottom: 3px;
     text-align: left;
 }
 
-/* Style du conteneur principal */
 .container {
     max-width: 1200px;
-   /* background-color: brown; */
 }
 
-/* Style pour les labels "Magasin et Produit" à gauche du dropdown */
 label {
     font-weight: bold;
- 
 }
 
-
-.magasin-container{
-    width: 6%;
- 
-}
-
-.produit-container{
-    width: 6%;
- 
-}
-
-/* Style pour le dropdown */
-.dropdown-content {
-   /* position: relative;*/
-}
-
-/* Style pour le select */
 .dropdown-content select {
-    /*width: calc(100% - 20px); Réduit la largur du champ dropdown*/
     padding: 3px 3px 3px 3px;
     border: 1px solid #060606;
     border-radius: 3px;
     background-color: #f0f0f0;
- 
 }
 
-/* Style pour le champ d'affichage de l'adresse */
 .adresse-box {
     width: 100%;
-    padding: 3px 3px 3px 3px;
+    padding: 3px 3px 3px 3px ;
     border: 1px solid #060606;
     border-radius: 3px;
     background-color: #f0f0f0;
 }
 
-/* Style pour le champ texte utilisé pour la quantité*/
-input{
+input {
     width: 100%;
-    padding: 3px 3px 3px 3px;
+    padding: 3px 3px 3px 3px ;
     border: 1px solid #060606;
     border-radius: 3px;
     background-color: #f0f0f0;
 }
 
-/* Style pour les colonnes */
 .col-md-3 {
-    padding-right: 3px;
-    padding-left: 3px;
-    margin-bottom: 3px;
+    padding-right: 3px ;
+    padding-left: 3px   ;
+    margin-bottom: 3px ;
 }
 
-/* Ajustement des marges entre les colonnes */
 .magasin-container, .dropdown-container, .adresse-container, .produit-container, .details-produit-container, .date-container {
-    margin-right: 5px 5px 5px 5px; /* Ajustez selon vos besoins */
-    text-align:left ;
+    margin-right: 5px;
+    text-align: left;
 }
 </style>

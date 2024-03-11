@@ -91,8 +91,8 @@ export default {
             selectedProduit: '',
             selectedProduitDetails: {},
             isProduitDropdownOpen: false,
-            quantiteCommandeSelected: 0,
-            quantiteCommande: '',      
+            quantiteCommandeSelected: '',
+            quantiteCommande: 0,      
         };
     },
     methods: {
@@ -124,14 +124,14 @@ export default {
         },
         saveQuantiteCommande() {
             const quantiteCommande = this.quantiteCommandeSelected;
-            const dateSouhaitee = this.dateSouhaitee;
-            const dateButoir = this.dateButoir;
+            //const dateSouhaitee = this.dateSouhaitee;
+            //const dateButoir = this.dateButoir;
 
             const data = {
-                dateSouhaitee: dateSouhaitee,
-                dateButoir: dateButoir,
-                quantiteCommande: quantiteCommande
-            };
+               // dateSouhaitee: dateSouhaitee,
+               // dateButoir: dateButoir,
+                quantiteCommande: this.quantiteCommandeSelected
+            }
 
             axios.post('http://localhost:8080/parametres/add', data)
                 .then(response => {

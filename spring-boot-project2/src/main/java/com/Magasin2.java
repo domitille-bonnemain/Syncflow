@@ -10,17 +10,21 @@ public class Magasin2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @Column(name="id_magasin2")
+    private Integer idMagasin2;
 
+    @Column(name="nom_magasin2")
     private String nomMagasin2;
+    
+    @Column(name="adresse_magasin2")
     private String adresseMagasin2;
 
-    public Integer getId() {
-        return id;
+    public Integer getidMagasin2() {
+        return idMagasin2;
       }
     
-    public void setId(Integer id) {
-        this.id = id;
+    public void setidMagasin2(Integer idMagasin2) {
+        this.idMagasin2 = idMagasin2;
       }
 
     public String getnomMagasin2() {

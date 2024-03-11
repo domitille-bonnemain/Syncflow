@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-const PARAMETRES_API_BASE_URL = 'http://localhost:8080/parametres/all'
+const PARAMETRES_API_BASE_URL = 'http://localhost:8080/parametres/add'
 
 class ParametresService{
-    getParametres(){
+    setParametres(){
 
         
-        return axios.get(PARAMETRES_API_BASE_URL);
+        return axios.set(PARAMETRES_API_BASE_URL);
     }
 }
 

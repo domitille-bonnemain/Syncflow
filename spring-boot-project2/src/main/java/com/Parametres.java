@@ -27,13 +27,14 @@ public class Parametres {
     @Column(name="date_butoir")
     private Date dateButoir;
 
-    @Column(name="quantite_commande")
-    private Integer quantiteCommande;
+    @Column(name="quantite_commandee")
+    private Integer quantiteCommandee;
 
     @ManyToOne
-    @JoinColumn(name="id")
-    private Magasin2 magasin2;
+    @JoinColumn(name="id_magasin2")
+    private Magasin2 idMagasin2;
     @JoinColumn(name="adresse_magasin2")
+    private String adresseMagasin2;
 
 
     // Getters and Setters
@@ -62,19 +63,19 @@ public class Parametres {
         this.dateButoir = dateButoir;
     }
 
-    public Integer getQuantiteCommande() {
-        return quantiteCommande;
+    public Integer getQuantiteCommandee() {
+        return quantiteCommandee;
     }
 
-    public void setQuantiteCommande(Integer quantiteCommande) {
-        this.quantiteCommande = quantiteCommande;
+    public void setQuantiteCommandee(Integer quantiteCommandee) {
+        this.quantiteCommandee = quantiteCommandee;
     }
 
-    public Magasin2 getMagasin2() {
-        return magasin2;
+    public Magasin2 getidMagasin2() {
+        return idMagasin2;
     }
 
-    public void setMagasin2(Magasin2 magasin2) {
-        this.magasin2 = magasin2;
+    public void setidMagasin2(Magasin2 idMagasin2) {
+        this.idMagasin2 = idMagasin2;
     }
 }

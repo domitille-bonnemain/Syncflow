@@ -23,7 +23,7 @@ public class ParametresController {
     
     
     @PostMapping(path="/add")
-    public @ResponseBody String setQantiteCommandee (@RequestParam Integer quantiteCommandee)
+    public @ResponseBody String setQuantiteCommandee (@RequestParam Integer quantiteCommandee)
    // @DateTimeFormat(pattern="yyyy-MM-dd") Date dateSouhaitee,
    // @RequestParam 
    // @DateTimeFormat(pattern="yyyy-MM-dd") Date dateButoir,

@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-md-3 quantiteSelected-container">
-                <input type="text" v-model="quantiteCommandeeSelected" @keyup.enter="saveQuantiteCommandee" class="form-control">
+                <input type="text" v-model="quantiteCommandeeSelected" @keyup.enter="setQuantiteCommandee" class="form-control">
             </div>
         </div>
     </div>
@@ -121,19 +121,19 @@ export default {
         toggleProduitDropdown() {
             this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
         },
-        saveQuantiteCommandee() {
+        setQuantiteCommandee() {
             const quantiteCommandee = this.quantiteCommandeeSelected;
 
             const parametres = {
                 quantiteCommandee: quantiteCommandee
             };
 
-            axios.post('http://localhost:8080/parametres/add', parametres)
-            
+            axios.post('http://localhost:8080/parametres/add',parametres)
+
                 .then(response => {
                     console.log(response.data);
-                    // Appel du service pour sauvegarder la quantité
-                    ParametresService.saveQuantitee(quantiteCommandee)
+                    // Appel du service pour sauvegarder la quantitée
+                    ParametresService.setQuantiteeComandee(quantiteCommandee)
                         .then(response => {
                             console.log(response.data);
                         })

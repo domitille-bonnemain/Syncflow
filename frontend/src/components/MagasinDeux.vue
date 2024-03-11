@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-md-3 quantiteSelected-container">
-                <input type="text" v-model="quantiteCommandeSelected" @keyup.enter="saveQuantiteCommande" class="form-control">
+                <input type="text" v-model="quantiteCommandeeSelected" @keyup.enter="saveQuantiteCommandee" class="form-control">
             </div>
         </div>
     </div>
@@ -81,8 +81,8 @@ export default {
     name: 'MagasinDeux',
     data() {
         return {
-            dateSouhaitee: '',
-            dateButoir: '',
+            //dateSouhaitee: '',
+           // dateButoir: '',
             magasin2: [],
             selectedMagasin: '',
             selectedMagasinDetails: {},
@@ -91,8 +91,7 @@ export default {
             selectedProduit: '',
             selectedProduitDetails: {},
             isProduitDropdownOpen: false,
-            quantiteCommandeSelected: '',
-            quantiteCommande: 0,      
+            quantiteCommandeeSelected: '',
         };
     },
     methods: {
@@ -122,22 +121,19 @@ export default {
         toggleProduitDropdown() {
             this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
         },
-        saveQuantiteCommande() {
-            const quantiteCommande = this.quantiteCommandeSelected;
-            //const dateSouhaitee = this.dateSouhaitee;
-            //const dateButoir = this.dateButoir;
+        saveQuantiteCommandee() {
+            const quantiteCommandee = this.quantiteCommandeeSelected;
 
-            const data = {
-               // dateSouhaitee: dateSouhaitee,
-               // dateButoir: dateButoir,
-                quantiteCommande: this.quantiteCommandeSelected
-            }
+            const parametres = {
+                quantiteCommandee: quantiteCommandee
+            };
 
-            axios.post('http://localhost:8080/parametres/add', data)
+            axios.post('http://localhost:8080/parametres/add', parametres)
+            
                 .then(response => {
                     console.log(response.data);
                     // Appel du service pour sauvegarder la quantité
-                    ParametresService.saveQuantite(quantiteCommande)
+                    ParametresService.saveQuantitee(quantiteCommandee)
                         .then(response => {
                             console.log(response.data);
                         })
@@ -149,16 +145,13 @@ export default {
                     console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);
                 });
         },
-
-        saveDates() {
+       /* saveDates() {
             const dateSouhaitee = new Date(this.dateSouhaitee);
             const dateButoir = new Date(this.dateButoir);
-            const quantiteCommande = this.quantiteCommande;
 
             const data = {
                 dateSouhaitee: dateSouhaitee,
-                dateButoir: dateButoir,
-                quantiteCommande: quantiteCommande
+                dateButoir: dateButoir
             };
 
             axios.post('http://localhost:8080/parametres/add', data)
@@ -168,15 +161,15 @@ export default {
                 .catch(error => {
                     console.error('Erreur lors de l\'appel Axios pour sauvegarder les dates :', error);
                 });
-        }
+        }*/
     },
     created() {
         this.getMagasin2();
         this.getProduits();
     },
 };
-
 </script>
+
 
 
 <style scoped>

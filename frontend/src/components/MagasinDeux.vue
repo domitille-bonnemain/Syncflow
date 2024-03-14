@@ -122,25 +122,25 @@ export default {
             this.isProduitDropdownOpen = !this.isProduitDropdownOpen;
         },
         setQuantiteCommandee() {
-            const quantiteCommandee = this.quantiteCommandeeSelected;
-            console.log("Quantité commandée:", quantiteCommandee); // Vérifier si la valeur est bien envoyé 
+            const quantiteCommandeeConst = this.quantiteCommandeeSelected;
+            console.log("Quantité commandée:", quantiteCommandeeConst); // Vérifier si la valeur est bien envoyé 
 
             const parametres = {
-                'quantiteCommandee': quantiteCommandee
-            };
+                quantiteCommandee: quantiteCommandeeConst
+           };
             
-         axios.post('http://localhost:8080/parametres/add',parametres)
+         axios.post('http://localhost:8080/parametres/add', parametres)
 
                 .then(response => {
                     console.log(response.data);
                     // Appel du service pour sauvegarder la quantitée
-                    ParametresService.setQuantiteeComandee(quantiteCommandee)
-                        .then(response => {
-                            console.log(response.data);
-                        })
-                        .catch(error => {
-                            console.error('Erreur lors de la sauvegarde de la quantité :', error);
-                        });
+                   // ParametresService.setQuantiteeComandee(quantiteCommandee)
+                      //  .then(response => {
+                       //     console.log(response.data);
+                      //  })
+                        //.catch(error => {
+                           // console.error('Erreur lors de la sauvegarde de la quantité :', error);
+                      //  });
                 })
                 .catch(error => {
                     console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);

@@ -1,369 +1,78 @@
-2024-03-11T00:02:23.855+01:00  INFO 20268 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:02:23.865+01:00  INFO 20268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T00:02:23.872+01:00  INFO 20268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T00:02:35.598+01:00  INFO 12008 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 12008 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T00:02:35.609+01:00  INFO 12008 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T00:02:36.506+01:00  INFO 12008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T00:02:36.845+01:00  INFO 12008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 315 ms. Found 4 JPA repository interfaces.
-2024-03-11T00:02:37.365+01:00  INFO 12008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T00:02:37.380+01:00  INFO 12008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T00:02:37.381+01:00  INFO 12008 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T00:02:37.469+01:00  INFO 12008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T00:02:37.470+01:00  INFO 12008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1792 ms
-2024-03-11T00:02:37.683+01:00  INFO 12008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T00:02:37.751+01:00  INFO 12008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T00:02:37.794+01:00  INFO 12008 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T00:02:38.039+01:00  INFO 12008 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T00:02:38.075+01:00  INFO 12008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T00:02:38.378+01:00  INFO 12008 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@123c48d0
-2024-03-11T00:02:38.380+01:00  INFO 12008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T00:02:38.660+01:00 ERROR 12008 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-2024-03-11T00:02:38.662+01:00  WARN 12008 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-2024-03-11T00:02:38.662+01:00  INFO 12008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T00:02:38.679+01:00  INFO 12008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T00:02:38.689+01:00  INFO 12008 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-03-11T00:02:38.711+01:00  INFO 12008 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-03-11T00:02:38.745+01:00 ERROR 12008 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
-	at com.SpringBootProject2Application.main(SpringBootProject2Application.java:10) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-	at org.hibernate.boot.model.internal.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:104) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1910) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1859) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1768) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.3.jar:6.1.3]
-	... 16 common frames omitted
-
-2024-03-11T00:11:27.229+01:00  INFO 15564 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 15564 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T00:11:27.232+01:00  INFO 15564 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T00:11:28.160+01:00  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T00:11:28.490+01:00  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 320 ms. Found 4 JPA repository interfaces.
-2024-03-11T00:11:29.034+01:00  INFO 15564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T00:11:29.052+01:00  INFO 15564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T00:11:29.052+01:00  INFO 15564 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T00:11:29.128+01:00  INFO 15564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T00:11:29.129+01:00  INFO 15564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1813 ms
-2024-03-11T00:11:29.336+01:00  INFO 15564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T00:11:29.399+01:00  INFO 15564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T00:11:29.444+01:00  INFO 15564 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T00:11:29.699+01:00  INFO 15564 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T00:11:29.735+01:00  INFO 15564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T00:11:30.042+01:00  INFO 15564 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dee3a6c
-2024-03-11T00:11:30.044+01:00  INFO 15564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T00:11:30.310+01:00 ERROR 15564 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-2024-03-11T00:11:30.311+01:00  WARN 15564 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-2024-03-11T00:11:30.312+01:00  INFO 15564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T00:11:30.360+01:00  INFO 15564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T00:11:30.369+01:00  INFO 15564 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-03-11T00:11:30.389+01:00  INFO 15564 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-03-11T00:11:30.412+01:00 ERROR 15564 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
-	at com.SpringBootProject2Application.main(SpringBootProject2Application.java:10) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: Association 'com.Parametres.idMagasin2' targets an unknown entity named 'java.lang.Integer'
-	at org.hibernate.boot.model.internal.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:104) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1910) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1859) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1768) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.3.jar:6.1.3]
-	... 16 common frames omitted
-
-2024-03-11T00:23:48.878+01:00  INFO 19184 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 19184 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T00:23:48.880+01:00  INFO 19184 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T00:23:49.771+01:00  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T00:23:50.081+01:00  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 297 ms. Found 4 JPA repository interfaces.
-2024-03-11T00:23:50.619+01:00  INFO 19184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T00:23:50.633+01:00  INFO 19184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T00:23:50.634+01:00  INFO 19184 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T00:23:50.709+01:00  INFO 19184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T00:23:50.710+01:00  INFO 19184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1749 ms
-2024-03-11T00:23:50.926+01:00  INFO 19184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T00:23:50.986+01:00  INFO 19184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T00:23:51.025+01:00  INFO 19184 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T00:23:51.272+01:00  INFO 19184 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T00:23:51.303+01:00  INFO 19184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T00:23:51.649+01:00  INFO 19184 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@123c48d0
-2024-03-11T00:23:51.651+01:00  INFO 19184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T00:23:52.588+01:00  INFO 19184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T00:23:52.656+01:00  WARN 19184 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table parametres modify column adresse_magasin2 integer" via JDBC [Referencing column 'adresse_magasin2' and referenced column 'adresse_magasin2' in foreign key constraint 'adresse_magasin2' are incompatible.]
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table parametres modify column adresse_magasin2 integer" via JDBC [Referencing column 'adresse_magasin2' and referenced column 'adresse_magasin2' in foreign key constraint 'adresse_magasin2' are incompatible.]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
-	at com.SpringBootProject2Application.main(SpringBootProject2Application.java:10) ~[classes/:na]
-Caused by: java.sql.SQLException: Referencing column 'adresse_magasin2' and referenced column 'adresse_magasin2' in foreign key constraint 'adresse_magasin2' are incompatible.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
-	... 38 common frames omitted
-
-2024-03-11T00:23:52.826+01:00  INFO 19184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:23:53.096+01:00  WARN 19184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T00:23:53.514+01:00  INFO 19184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T00:23:53.528+01:00  INFO 19184 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 5.12 seconds (process running for 5.476)
-2024-03-11T00:28:12.692+01:00  INFO 19184 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:28:12.694+01:00  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T00:28:12.703+01:00  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T00:28:26.440+01:00  INFO 11324 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 11324 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T00:28:26.443+01:00  INFO 11324 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T00:28:27.331+01:00  INFO 11324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T00:28:27.622+01:00  INFO 11324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282 ms. Found 4 JPA repository interfaces.
-2024-03-11T00:28:28.146+01:00  INFO 11324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T00:28:28.159+01:00  INFO 11324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T00:28:28.159+01:00  INFO 11324 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T00:28:28.235+01:00  INFO 11324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T00:28:28.236+01:00  INFO 11324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1720 ms
-2024-03-11T00:28:28.439+01:00  INFO 11324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T00:28:28.500+01:00  INFO 11324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T00:28:28.539+01:00  INFO 11324 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T00:28:28.805+01:00  INFO 11324 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T00:28:28.844+01:00  INFO 11324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T00:28:29.165+01:00  INFO 11324 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6af2c4
-2024-03-11T00:28:29.167+01:00  INFO 11324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T00:28:30.112+01:00  INFO 11324 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T00:28:30.203+01:00  INFO 11324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:28:30.457+01:00  WARN 11324 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T00:28:30.821+01:00  INFO 11324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T00:28:30.832+01:00  INFO 11324 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.839 seconds (process running for 5.177)
-2024-03-11T00:28:53.826+01:00  INFO 11324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T00:28:53.826+01:00  INFO 11324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-03-11T00:28:53.827+01:00  INFO 11324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-03-11T00:56:58.794+01:00  INFO 11324 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:56:58.799+01:00  INFO 11324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T00:56:58.813+01:00  INFO 11324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T00:57:10.106+01:00  INFO 12884 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 12884 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T00:57:10.110+01:00  INFO 12884 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T00:57:11.062+01:00  INFO 12884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T00:57:11.357+01:00  INFO 12884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286 ms. Found 4 JPA repository interfaces.
-2024-03-11T00:57:11.962+01:00  INFO 12884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T00:57:11.977+01:00  INFO 12884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T00:57:11.979+01:00  INFO 12884 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T00:57:12.069+01:00  INFO 12884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T00:57:12.069+01:00  INFO 12884 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1865 ms
-2024-03-11T00:57:12.292+01:00  INFO 12884 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T00:57:12.361+01:00  INFO 12884 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T00:57:12.405+01:00  INFO 12884 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T00:57:12.667+01:00  INFO 12884 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T00:57:12.702+01:00  INFO 12884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T00:57:13.028+01:00  INFO 12884 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@123c48d0
-2024-03-11T00:57:13.031+01:00  INFO 12884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T00:57:14.012+01:00  INFO 12884 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T00:57:14.116+01:00  INFO 12884 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T00:57:14.391+01:00  WARN 12884 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T00:57:14.751+01:00  INFO 12884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T00:57:14.766+01:00  INFO 12884 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 5.16 seconds (process running for 5.615)
-2024-03-11T00:57:44.227+01:00  INFO 12884 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T00:57:44.228+01:00  INFO 12884 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-03-11T00:57:44.231+01:00  INFO 12884 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-03-11T01:00:04.984+01:00  WARN 12884 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:00:13.429+01:00  WARN 12884 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:02:46.216+01:00  WARN 12884 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:02:51.852+01:00  WARN 12884 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:05:17.415+01:00  WARN 12884 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:14:19.892+01:00  WARN 12884 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:14:51.265+01:00  WARN 12884 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T01:15:19.657+01:00  WARN 12884 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:00:08.476+01:00  INFO 19212 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 19212 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T10:00:08.476+01:00  INFO 19212 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T10:00:09.969+01:00  INFO 19212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T10:00:10.530+01:00  INFO 19212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 538 ms. Found 4 JPA repository interfaces.
-2024-03-11T10:00:11.658+01:00  INFO 19212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T10:00:11.686+01:00  INFO 19212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T10:00:11.687+01:00  INFO 19212 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T10:00:11.847+01:00  INFO 19212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T10:00:11.850+01:00  INFO 19212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3285 ms
-2024-03-11T10:00:12.351+01:00  INFO 19212 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T10:00:12.569+01:00  INFO 19212 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T10:00:12.694+01:00  INFO 19212 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T10:00:13.483+01:00  INFO 19212 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T10:00:13.564+01:00  INFO 19212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T10:00:14.405+01:00  INFO 19212 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1324e70a
-2024-03-11T10:00:14.414+01:00  INFO 19212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T10:00:16.252+01:00  INFO 19212 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T10:00:16.396+01:00  INFO 19212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T10:00:17.431+01:00  WARN 19212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T10:00:18.358+01:00  INFO 19212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T10:00:18.379+01:00  INFO 19212 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 10.588 seconds (process running for 11.092)
-2024-03-11T10:00:28.136+01:00  INFO 19212 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T10:00:28.136+01:00  INFO 19212 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-03-11T10:00:28.136+01:00  INFO 19212 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-03-11T10:22:45.941+01:00  WARN 19212 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:25:14.496+01:00  WARN 19212 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:38:03.992+01:00  WARN 19212 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:39:08.446+01:00  WARN 19212 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:41:48.051+01:00  WARN 19212 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:42:09.988+01:00  WARN 19212 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:46:36.588+01:00  WARN 19212 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:49:06.605+01:00  WARN 19212 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:49:43.659+01:00  WARN 19212 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:51:59.163+01:00  WARN 19212 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T10:59:56.234+01:00  WARN 19212 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:05:45.113+01:00  WARN 19212 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:12:45.532+01:00  WARN 19212 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:16:07.644+01:00  WARN 19212 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:16:49.435+01:00  WARN 19212 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:20:56.534+01:00  WARN 19212 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:21:04.288+01:00  WARN 19212 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:21:07.104+01:00  WARN 19212 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:21:10.150+01:00  WARN 19212 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:21:12.428+01:00  WARN 19212 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:21:23.267+01:00  INFO 19212 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T11:21:23.273+01:00  INFO 19212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T11:21:23.278+01:00  INFO 19212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T11:21:41.204+01:00  INFO 9168 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 9168 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T11:21:41.219+01:00  INFO 9168 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T11:21:42.070+01:00  INFO 9168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T11:21:42.351+01:00  INFO 9168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 278 ms. Found 4 JPA repository interfaces.
-2024-03-11T11:21:42.882+01:00  INFO 9168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T11:21:42.898+01:00  INFO 9168 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T11:21:42.898+01:00  INFO 9168 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T11:21:42.960+01:00  INFO 9168 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T11:21:42.960+01:00  INFO 9168 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1671 ms
-2024-03-11T11:21:43.148+01:00  INFO 9168 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T11:21:43.194+01:00  INFO 9168 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T11:21:43.226+01:00  INFO 9168 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T11:21:43.460+01:00  INFO 9168 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T11:21:43.507+01:00  INFO 9168 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T11:21:43.788+01:00  INFO 9168 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@123c48d0
-2024-03-11T11:21:43.804+01:00  INFO 9168 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T11:21:44.701+01:00  INFO 9168 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T11:21:44.764+01:00  INFO 9168 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T11:21:45.029+01:00  WARN 9168 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T11:21:45.373+01:00  INFO 9168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T11:21:45.392+01:00  INFO 9168 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.609 seconds (process running for 4.937)
-2024-03-11T11:22:00.366+01:00  INFO 9168 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T11:22:00.367+01:00  INFO 9168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-03-11T11:22:00.368+01:00  INFO 9168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-03-11T11:22:13.053+01:00  WARN 9168 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:41:22.249+01:00  WARN 9168 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:48:50.839+01:00  WARN 9168 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:54:36.869+01:00  WARN 9168 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:55:00.585+01:00  WARN 9168 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T11:55:10.734+01:00  INFO 9168 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T11:55:10.734+01:00  INFO 9168 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-03-11T11:55:10.734+01:00  INFO 9168 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-03-11T11:55:26.140+01:00  INFO 15372 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 15372 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
-2024-03-11T11:55:26.154+01:00  INFO 15372 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
-2024-03-11T11:55:26.957+01:00  INFO 15372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-03-11T11:55:27.238+01:00  INFO 15372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 268 ms. Found 4 JPA repository interfaces.
-2024-03-11T11:55:27.707+01:00  INFO 15372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-03-11T11:55:27.723+01:00  INFO 15372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-03-11T11:55:27.723+01:00  INFO 15372 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-03-11T11:55:27.785+01:00  INFO 15372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-03-11T11:55:27.785+01:00  INFO 15372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1584 ms
-2024-03-11T11:55:27.941+01:00  INFO 15372 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-03-11T11:55:28.004+01:00  INFO 15372 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-03-11T11:55:28.035+01:00  INFO 15372 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-03-11T11:55:28.270+01:00  INFO 15372 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-03-11T11:55:28.286+01:00  INFO 15372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-11T11:55:28.598+01:00  INFO 15372 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41ddec69
-2024-03-11T11:55:28.598+01:00  INFO 15372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-11T11:55:29.483+01:00  INFO 15372 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-03-11T11:55:29.545+01:00  INFO 15372 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-03-11T11:55:29.780+01:00  WARN 15372 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-03-11T11:55:30.077+01:00  INFO 15372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-03-11T11:55:30.093+01:00  INFO 15372 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.348 seconds (process running for 4.7)
-2024-03-11T11:58:14.599+01:00  INFO 15372 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T11:58:14.600+01:00  INFO 15372 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-03-11T11:58:14.601+01:00  INFO 15372 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-03-11T12:01:20.287+01:00  WARN 15372 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T12:04:27.589+01:00  WARN 15372 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T12:08:00.025+01:00  WARN 15372 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T12:08:11.566+01:00  WARN 15372 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T12:08:16.246+01:00  WARN 15372 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
-2024-03-11T12:12:14.735+01:00  WARN 15372 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'quantiteCommandee' for method parameter type Integer is not present]
+2024-03-14T04:21:32.404+01:00  INFO 1140 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 1140 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
+2024-03-14T04:21:32.418+01:00  INFO 1140 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
+2024-03-14T04:21:33.402+01:00  INFO 1140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-14T04:21:33.823+01:00  INFO 1140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 412 ms. Found 4 JPA repository interfaces.
+2024-03-14T04:21:34.333+01:00  INFO 1140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-14T04:21:34.347+01:00  INFO 1140 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-14T04:21:34.348+01:00  INFO 1140 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-14T04:21:34.403+01:00  INFO 1140 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-14T04:21:34.403+01:00  INFO 1140 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1919 ms
+2024-03-14T04:21:34.632+01:00  INFO 1140 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-14T04:21:34.733+01:00  INFO 1140 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-14T04:21:34.793+01:00  INFO 1140 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-14T04:21:35.114+01:00  INFO 1140 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-14T04:21:35.153+01:00  INFO 1140 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-14T04:21:35.585+01:00  INFO 1140 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62de20d3
+2024-03-14T04:21:35.587+01:00  INFO 1140 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-14T04:21:36.652+01:00  INFO 1140 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-14T04:21:36.748+01:00  INFO 1140 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-14T04:21:37.030+01:00  WARN 1140 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-14T04:21:37.403+01:00  INFO 1140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-14T04:21:37.435+01:00  INFO 1140 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 5.502 seconds (process running for 5.918)
+2024-03-14T04:21:42.737+01:00  INFO 1140 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-14T04:21:42.737+01:00  INFO 1140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-14T04:21:42.737+01:00  INFO 1140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-14T04:26:34.683+01:00  INFO 1140 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-14T04:26:34.683+01:00  INFO 1140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-14T04:26:34.698+01:00  INFO 1140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-14T04:26:42.160+01:00  INFO 7340 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 7340 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
+2024-03-14T04:26:42.163+01:00  INFO 7340 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
+2024-03-14T04:26:43.057+01:00  INFO 7340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-14T04:26:43.343+01:00  INFO 7340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 277 ms. Found 4 JPA repository interfaces.
+2024-03-14T04:26:43.882+01:00  INFO 7340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-14T04:26:43.902+01:00  INFO 7340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-14T04:26:43.902+01:00  INFO 7340 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-14T04:26:43.974+01:00  INFO 7340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-14T04:26:43.974+01:00  INFO 7340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1751 ms
+2024-03-14T04:26:44.164+01:00  INFO 7340 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-14T04:26:44.222+01:00  INFO 7340 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-14T04:26:44.266+01:00  INFO 7340 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-14T04:26:44.483+01:00  INFO 7340 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-14T04:26:44.503+01:00  INFO 7340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-14T04:26:44.792+01:00  INFO 7340 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dee3a6c
+2024-03-14T04:26:44.792+01:00  INFO 7340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-14T04:26:45.665+01:00  INFO 7340 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-14T04:26:45.728+01:00  INFO 7340 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-14T04:26:45.983+01:00  WARN 7340 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-14T04:26:46.317+01:00  INFO 7340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-14T04:26:46.322+01:00  INFO 7340 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.58 seconds (process running for 4.906)
+2024-03-14T04:26:52.781+01:00  INFO 7340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-14T04:26:52.783+01:00  INFO 7340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-14T04:26:52.789+01:00  INFO 7340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-03-14T04:35:41.715+01:00  INFO 7340 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-14T04:35:41.715+01:00  INFO 7340 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-14T04:35:41.723+01:00  INFO 7340 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-14T04:35:48.376+01:00  INFO 7648 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 7648 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
+2024-03-14T04:35:48.376+01:00  INFO 7648 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
+2024-03-14T04:35:49.202+01:00  INFO 7648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-14T04:35:49.482+01:00  INFO 7648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 274 ms. Found 4 JPA repository interfaces.
+2024-03-14T04:35:50.004+01:00  INFO 7648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-14T04:35:50.023+01:00  INFO 7648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-14T04:35:50.023+01:00  INFO 7648 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-14T04:35:50.082+01:00  INFO 7648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-14T04:35:50.082+01:00  INFO 7648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1650 ms
+2024-03-14T04:35:50.263+01:00  INFO 7648 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-14T04:35:50.323+01:00  INFO 7648 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-14T04:35:50.363+01:00  INFO 7648 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-14T04:35:50.600+01:00  INFO 7648 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-14T04:35:50.629+01:00  INFO 7648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-14T04:35:50.934+01:00  INFO 7648 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@123c48d0
+2024-03-14T04:35:50.936+01:00  INFO 7648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-14T04:35:52.043+01:00  INFO 7648 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-14T04:35:52.132+01:00  INFO 7648 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-14T04:35:52.413+01:00  WARN 7648 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-14T04:35:52.817+01:00  INFO 7648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-14T04:35:52.829+01:00  INFO 7648 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.906 seconds (process running for 5.209)
+2024-03-14T04:36:09.724+01:00  INFO 7648 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-14T04:36:09.726+01:00  INFO 7648 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-14T04:36:09.730+01:00  INFO 7648 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

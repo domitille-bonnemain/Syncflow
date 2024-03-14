@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,16 +24,18 @@ public class ParametresController {
     
     
     @PostMapping(path="/add")
-    public @ResponseBody String setQuantiteCommandee (@RequestParam Integer quantiteCommandee)
+    public String setQuantiteCommandee (@RequestBody SetQuantiteRequest request)
    // @DateTimeFormat(pattern="yyyy-MM-dd") Date dateSouhaitee,
    // @RequestParam 
    // @DateTimeFormat(pattern="yyyy-MM-dd") Date dateButoir,
         
      {
+        System.out.println("essai");
         Parametres np = new Parametres();
       //  np.setDateSouhaitee(dateSouhaitee);
        // np.setDateButoir(dateButoir);
-        np.setQuantiteCommandee(quantiteCommandee);
+       
+        np.setQuantiteCommandee(Integer.valueOf(request.getquantiteCommandee()));
         ParametresRepository.save(np);
         return "saved";
     }

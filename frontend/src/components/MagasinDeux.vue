@@ -123,12 +123,13 @@ export default {
         },
         setQuantiteCommandee() {
             const quantiteCommandee = this.quantiteCommandeeSelected;
+            console.log("Quantité commandée:", quantiteCommandee); // Vérifier si la valeur est bien envoyé 
 
             const parametres = {
-                quantiteCommandee: quantiteCommandee
+                'quantiteCommandee': quantiteCommandee
             };
-
-            axios.post('http://localhost:8080/parametres/add',parametres)
+            
+         axios.post('http://localhost:8080/parametres/add',parametres)
 
                 .then(response => {
                     console.log(response.data);

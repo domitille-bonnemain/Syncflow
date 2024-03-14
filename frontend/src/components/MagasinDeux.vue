@@ -81,8 +81,8 @@ export default {
     name: 'MagasinDeux',
     data() {
         return {
-            //dateSouhaitee: '',
-           // dateButoir: '',
+            dateSouhaitee: '',
+            dateButoir: '',
             magasin2: [],
             selectedMagasin: '',
             selectedMagasinDetails: {},
@@ -146,23 +146,31 @@ export default {
                     console.error('Erreur lors de l\'appel Axios pour sauvegarder la quantité :', error);
                 });
         },
-       /* saveDates() {
-            const dateSouhaitee = new Date(this.dateSouhaitee);
-            const dateButoir = new Date(this.dateButoir);
+        saveDates() {
+            const dateSouhaitee = this.dateSouhaitee;
+            const dateButoir = this.dateButoir;
 
             const data = {
-                dateSouhaitee: dateSouhaitee,
-                dateButoir: dateButoir
+                'dateSouhaitee': dateSouhaitee,
+                'dateButoir': dateButoir
             };
 
-            axios.post('http://localhost:8080/parametres/add', data)
+            axios.post('http://localhost:8080/parametres/addDate',data)
                 .then(response => {
                     console.log(response.data);
+                    // Enregistrement des dates via ParametresService
+                    ParametresService.saveDates(dateSouhaitee, dateButoir)
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.error('Erreur lors de l\'enregistrement des dates via ParametresService :', error);
+                        });
                 })
                 .catch(error => {
                     console.error('Erreur lors de l\'appel Axios pour sauvegarder les dates :', error);
                 });
-        }*/
+        }
     },
     created() {
         this.getMagasin2();

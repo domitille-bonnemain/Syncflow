@@ -129,7 +129,7 @@ export default {
                 quantiteCommandee: quantiteCommandeeConst
            };
             
-         axios.post('http://localhost:8080/parametres/add', parametres)
+         axios.put('http://localhost:8080/parametres/add', parametres)
 
                 .then(response => {
                     console.log(response.data);
@@ -155,7 +155,7 @@ export default {
                 'dateButoir': dateButoir
             };
 
-            axios.post('http://localhost:8080/parametres/addDate',data)
+            axios.put('http://localhost:8080/parametres/addDate',data)
                 .then(response => {
                     console.log(response.data);
                     // Enregistrement des dates via ParametresService

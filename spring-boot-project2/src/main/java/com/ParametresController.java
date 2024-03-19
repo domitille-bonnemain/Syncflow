@@ -69,3 +69,5 @@ public class ParametresController {
         return ParametresRepository.findAll();
     }
 }
+
+

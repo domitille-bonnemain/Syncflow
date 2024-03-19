@@ -269,3 +269,27 @@
 2024-03-19T10:28:06.861+01:00  INFO 10212 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-19T10:28:06.861+01:00  INFO 10212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-03-19T10:28:06.877+01:00  INFO 10212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-19T10:28:20.214+01:00  INFO 14256 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 14256 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
+2024-03-19T10:28:20.216+01:00  INFO 14256 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
+2024-03-19T10:28:21.243+01:00  INFO 14256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19T10:28:21.538+01:00  INFO 14256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 277 ms. Found 4 JPA repository interfaces.
+2024-03-19T10:28:22.038+01:00  INFO 14256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-19T10:28:22.053+01:00  INFO 14256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-19T10:28:22.053+01:00  INFO 14256 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-19T10:28:22.096+01:00  INFO 14256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-19T10:28:22.112+01:00  INFO 14256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1826 ms
+2024-03-19T10:28:22.284+01:00  INFO 14256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19T10:28:22.330+01:00  INFO 14256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-19T10:28:22.362+01:00  INFO 14256 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-19T10:28:22.596+01:00  INFO 14256 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-19T10:28:22.628+01:00  INFO 14256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-19T10:28:22.933+01:00  INFO 14256 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44618fe6
+2024-03-19T10:28:22.933+01:00  INFO 14256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-19T10:28:23.881+01:00  INFO 14256 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-19T10:28:23.948+01:00  INFO 14256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19T10:28:24.245+01:00  WARN 14256 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19T10:28:24.609+01:00  INFO 14256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-19T10:28:24.621+01:00  INFO 14256 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 4.971 seconds (process running for 5.318)
+2024-03-19T10:28:27.511+01:00  INFO 14256 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-19T10:28:27.512+01:00  INFO 14256 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-19T10:28:27.516+01:00  INFO 14256 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

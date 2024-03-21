@@ -1,2 +1,24 @@
 2024-03-21T11:18:55.287+01:00  INFO 5220 --- [main] com.SpringBootProject2Application        : Starting SpringBootProject2Application using Java 17.0.10 with PID 5220 (C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2\target\classes started by Administrator in C:\Users\Administrator\Documents\spring-boot-project2\spring-boot-project2)
 2024-03-21T11:18:55.303+01:00  INFO 5220 --- [main] com.SpringBootProject2Application        : No active profile set, falling back to 1 default profile: "default"
+2024-03-21T11:18:56.570+01:00  INFO 5220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21T11:18:56.948+01:00  INFO 5220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 347 ms. Found 4 JPA repository interfaces.
+2024-03-21T11:18:57.607+01:00  INFO 5220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-21T11:18:57.623+01:00  INFO 5220 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-21T11:18:57.623+01:00  INFO 5220 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-21T11:18:57.717+01:00  INFO 5220 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-21T11:18:57.717+01:00  INFO 5220 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2344 ms
+2024-03-21T11:18:57.954+01:00  INFO 5220 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21T11:18:58.069+01:00  INFO 5220 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-21T11:18:58.125+01:00  INFO 5220 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-21T11:18:58.609+01:00  INFO 5220 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21T11:18:58.641+01:00  INFO 5220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-21T11:18:59.172+01:00  INFO 5220 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1203d787
+2024-03-21T11:18:59.172+01:00  INFO 5220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-21T11:19:00.610+01:00  INFO 5220 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21T11:19:00.761+01:00  INFO 5220 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21T11:19:01.075+01:00  WARN 5220 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21T11:19:01.565+01:00  INFO 5220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-21T11:19:01.579+01:00  INFO 5220 --- [main] com.SpringBootProject2Application        : Started SpringBootProject2Application in 6.857 seconds (process running for 7.262)
+2024-03-21T11:19:40.268+01:00  INFO 5220 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21T11:19:40.268+01:00  INFO 5220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-21T11:19:40.269+01:00  INFO 5220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

@@ -48,29 +48,74 @@ Je présenterai le processus de développement du projet à travers des vidéos,
 Le projet Outil de Prise de Commandes met en valeur mon engagement envers le développement backend en utilisant Java SpringBoot et MySQL, en tirant parti des outils et des meilleures pratiques standard de l'industrie. Grâce à la consultation d'experts, aux tests complets et au développement itératif, le projet vise à fournir une solution robuste et efficace pour la gestion des commandes.
 
 
+### Guide d'exécution du projet
+
+Ce document fournit des instructions sur la façon d'exécuter le backend et le frontend de ce projet.
+
+## Backend
+
+1. Ouvrez un terminal.
+
+2. Accédez à la racine du projet.
+
+3. Pour lancer le backend, exécutez la commande suivante :
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+## Test du Backend avec cURL
+
+1. Ouvrez un autre terminal (pour le test du backend avec cURL).
+
+2. Pour tester les endpoints du backend, utilisez la commande cURL. Par exemple, pour récupérer tous les paramètres, exécutez la commande suivante :
+    ```bash
+    curl http://localhost:8080/parametres/all
+    ```
+
+## Frontend
+
+1. Ouvrez un troisième terminal.
+
+2. Assurez-vous d'avoir Node.js installé. Si ce n'est pas le cas, installez Node.js à partir du site officiel : [Télécharger Node.js](https://nodejs.org/)
+
+3. Accédez au répertoire du frontend dans votre projet.
+
+4. Pour lancer le frontend, exécutez la commande suivante :
+    ```bash
+    npm run serve
+    ```
+
+Assurez-vous que le backend est en cours d'exécution avant de démarrer le frontend pour éviter les erreurs de connexion.
+
+---
+
+Note : Assurez-vous d'avoir toutes les dépendances nécessaires installées et configurées correctement avant d'exécuter les commandes ci-dessus.
+
+
+
 ---ENGLISH VERSION---
 
-# Synflow: Command Order Tool - Java SpringBoot with MySQL and Vue.js
+# Syncflow: Order Management Tool - Java SpringBoot with MySQL and Vue.js
 
 ## Introduction
 
-This personal project aims to develop a command order tool using Java SpringBoot with MySQL. The tool will serve as an API for managing orders, leveraging data manipulation, and integrating artificial intelligence functionalities. Throughout the development process, I focused on utilizing industry-standard tools, seeking expert advice, and ensuring robust testing practices.
+This personal project aims to develop an order management tool using Java SpringBoot with MySQL. The tool will serve as an API to manage orders, utilizing data manipulation and integrating AI features. Throughout the development process, emphasis has been placed on using industry-standard tools, seeking expert advice, and implementing robust testing practices.
 
 ## Project Overview
 
-The Command Order Tool is designed to streamline the order management process by providing a backend API. Leveraging SpringBoot and MySQL, the tool facilitates order creation, retrieval, and modification, while also incorporating AI features for enhanced decision-making.
+The Order Management Tool is designed to streamline the order management process by providing a backend API. Using SpringBoot and MySQL, the tool facilitates the creation, retrieval, and modification of orders, while integrating AI features for enhanced decision-making.
 
 ## Key Features
 
-- **API Development**: Utilized SpringBoot to create a robust backend API for order management.
-- **Database Integration**: Implemented MySQL for database management, ensuring efficient data storage and retrieval.
-- **Expert Consultation**: Engaged with Java professionals to gather insights and expertise, enhancing project development.
-- **Wireframing**: Developed wireframes to visualize project structure and user flow, guiding development decisions.
-- **Test-Driven Development**: Conducted thorough testing at each development stage to ensure code reliability and functionality.
-- **Frontend Development**: Integrated Vue.js for frontend development, enabling seamless user interaction.
-- **Continuous Integration**: Utilized curl commands for backend and database connectivity testing during project development.
-- **Version Management**: Adapted project versions of Java and SpringBoot as needed to align with dependency requirements.
-- **Documentation**: Maintained comprehensive project documentation, including wireframes, command logs, and architectural diagrams.
+- **API Development**: Utilizing SpringBoot to create a robust backend API for order management.
+- **Database Integration**: Implementing MySQL for database management, ensuring efficient data storage and retrieval.
+- **Expert Consultation**: Seeking advice from Java professionals to gather insights and expertise, enhancing project development.
+- **Wireframing**: Developing wireframes to visualize the project structure and user interaction flow, guiding development decisions.
+- **Test-Driven Development**: Conducting rigorous testing at every implementation stage to ensure code reliability and functionality.
+- **Frontend Development**: Integrating Vue.js for frontend development, enabling seamless user interaction.
+- **Continuous Integration**: Using curl commands for backend and database connectivity testing during project development.
+- **Version Management**: Adapting project Java and SpringBoot versions as needed to align with dependency requirements.
+- **Documentation**: Maintaining comprehensive project documentation, including wireframes, command logs, and architectural diagrams.
 
 ## Technologies Used
 
@@ -81,15 +126,62 @@ The Command Order Tool is designed to streamline the order management process by
 
 ## Project Progression
 
-1. **Project Initiation**: Defined project scope, objectives, and technology stack based on immersion learnings and personal interests.
-2. **Backend Development**: Developed backend API using SpringBoot, integrating MySQL for database management.
-3. **Expert Consultation**: Sought guidance from Java professionals for insights and best practices in backend development.
-4. **Wireframing and Design**: Created wireframes to visualize project structure and user interaction flow.
-5. **Testing and Iteration**: Conducted rigorous testing at each development stage, ensuring code reliability and functionality.
-6. **Frontend Integration**: Integrated Vue.js for frontend development, providing a user-friendly interface for order management.
-7. **Continuous Improvement**: Adapted project versions and dependencies as needed, ensuring compatibility and stability.
+1. **Project Initiation**: Defining project scope, goals, and technology stack based on immersion learnings and personal interests.
+2. **Backend Development**: Developing a backend API using SpringBoot, integrating MySQL for database management.
+3. **Expert Consultation**: Seeking advice from Java professionals for backend development ideas and best practices.
+4. **Wireframing and Design**: Creating wireframes to visualize project structure and user interaction flow.
+5. **Testing and Iteration**: Conducting rigorous testing at each development stage to ensure code reliability and functionality.
+6. **Frontend Integration**: Integrating Vue.js for frontend development, providing a user-friendly interface for order management.
+7. **Continuous Improvement**: Adapting project versions and dependencies as needed, ensuring compatibility and stability.
 
 ## Project Showcase
 
-I will be showcasing the
+I will showcase the project development process through videos, demonstrating wireframes, command execution, terminal logs, JSON data results, and project architecture.
 
+## Conclusion
+
+The Order Management Tool project highlights my commitment to backend development using Java SpringBoot and MySQL, leveraging industry-standard tools and best practices. Through expert consultation, comprehensive testing, and iterative development, the project aims to provide a robust and efficient solution for order management.
+
+
+### Project Execution Guide
+
+This document provides instructions on how to run the backend and frontend of this project.
+
+## Backend
+
+1. Open a terminal.
+
+2. Navigate to the project root directory.
+
+3. To launch the backend, execute the following command:
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+## Backend Testing with cURL
+
+1. Open another terminal (for backend testing with cURL).
+
+2. To test the backend endpoints, use the cURL command. For example, to retrieve all parameters, execute the following command:
+    ```bash
+    curl http://localhost:8080/parametres/all
+    ```
+
+## Frontend
+
+1. Open a third terminal.
+
+2. Ensure you have Node.js installed. If not, install Node.js from the official website: [Download Node.js](https://nodejs.org/)
+
+3. Navigate to the frontend directory within your project.
+
+4. To launch the frontend, execute the following command:
+    ```bash
+    npm run serve
+    ```
+
+Make sure the backend is running before starting the frontend to avoid connection errors.
+
+---
+
+Note: Ensure you have all necessary dependencies installed and configured correctly before executing the above commands.

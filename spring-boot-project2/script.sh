@@ -12,9 +12,9 @@ sleep 10
 echo "Testing Backend..."
 curl http://localhost:8080/demo/all
 
-# Arrêter le Backend (vous pouvez remplacer cela par une autre commande appropriée)
+# Arrêter le Backend 
 echo "Stopping Backend..."
-# Vous pouvez remplacer cette ligne par une commande pour terminer le processus de Maven
+
 
 # Start Frontend
 echo "Starting Frontend..."
